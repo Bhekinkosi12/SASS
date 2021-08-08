@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:views="clr-namespace:SASSApp.Views"
+             FlyoutHeaderBehavior="CollapseOnScroll"
+             Shell.ItemTemplate="{StaticResource MenuTemplate}"
+             Shell.MenuItemTemplate="{StaticResource MenuTemplate}"
+             Shell.FlyoutHeaderTemplate="{StaticResource FlyoutHeaderTemplate}"
+             x:Class="SASSApp.AppShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ThemeColor">#EF3D55</Color>
+            <Color x:Key="GrayColor">Gray</Color>
+            <Color x:Key="BgColor">#F0F0F0</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource GrayColor}"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="{StaticResource ThemeColor}"/>
+            </Style>
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}"/>
+            <DataTemplate x:Key="MenuTemplate">
+                <StackLayout Orientation="Horizontal">
+                    <Image Margin="30,10,20,10" Source="{Binding Icon}" WidthRequest="22" HeightRequest="22" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="{Binding Title}" TextColor="#686868" FontSize="16" VerticalOptions="Center"/>
+                </StackLayout>
+            </DataTemplate>
+            <DataTemplate x:Key="FlyoutHeaderTemplate">
+                <ContentView BackgroundColor="{StaticResource ThemeColor}" HeightRequest="245">
+                    <Image Source="Logo.png" WidthRequest="96" HeightRequest="96"
+                       HorizontalOptions="Center" VerticalOptions="Center"/>
+                </ContentView>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Shell.Resources>
+    
+    
+        <FlyoutItem Title="Home" Icon="home.png">
+            <Tab Title="Dashboard" Icon="dashboard.png">
+        <ShellContent ContentTemplate="{DataTemplate views:DashboardPage}"/>
+    </Tab>
+        <Tab Title="Bookshelf" Icon="favourite.png">
+            <ShellContent ContentTemplate="{DataTemplate views:FavouritsPage}"/>
+        </Tab>
+
+        <Tab Title="Instituions" Icon="graduate.png">
+            <ShellContent ContentTemplate="{DataTemplate views:InstitutionsPage} Route="InstitutionsPage"/>
+        </Tab>
+        <Tab Title="Explore" Icon="search.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ExplorePage}"/>
+        </Tab>
+    </FlyoutItem>
+    <MenuItem Text="Profile" Command="{Binding SettingsCommand}" CommandParameter="profile" IconImageSource="avata.png"/>    
+    <MenuItem Text="About" Command="{Binding NavigateCommand}" CommandParameter="about" IconImageSource="icon_about.png"/>
+    <MenuItem Text="Notifications" Command="{Binding NavigateCommand}" CommandParameter="notifications" IconImageSource="bell.png"/>
+    <MenuItem Text="Settings" Command="{Binding SettingsCommand}" CommandParameter="settings" IconImageSource="cog.png"/>
+</Shell>
+
