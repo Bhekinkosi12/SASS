@@ -45,7 +45,8 @@
         </Tab>
 
         <Tab Title="Instituions" Icon="graduate.png">
-            <ShellContent ContentTemplate="{DataTemplate views:InstitutionsPage} Route="InstitutionsPage"/>
+            <ShellContent ContentTemplate="{DataTemplate views:InstitutionsPage}" />
+            <!--  Route="InstitutionsPage"/>   --> 
         </Tab>
         <Tab Title="Explore" Icon="search.png">
             <ShellContent ContentTemplate="{DataTemplate views:ExplorePage}"/>

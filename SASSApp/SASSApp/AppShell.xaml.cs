@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SASSApp.Views.Institutions;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -16,7 +15,7 @@ namespace SASSApp
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(InstitutionsPage), typeof(InstitutionsPage));
+          //  Routing.RegisterRoute(nameof(InstitutionsPage), typeof(InstitutionsPage));
         }
     }
 }
