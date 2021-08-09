@@ -5,7 +5,7 @@ About: The SASS App is an online library designed to provide Tertiary students w
 
 Team members:
 
-Bhekinkosi Kubheka
-Kananelo Khoetsa
-Lwazi Nhleko
-Sisipo Songo
+- Bhekinkosi Kubheka
+- Kananelo Khoetsa
+- Lwazi Nhleko
+- Sisipo Songo
