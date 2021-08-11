@@ -27,7 +27,6 @@
     <Folder Include="Services\SettingsSV\" />
     <Folder Include="Services\ProfileSV\" />
     <Folder Include="Services\NotificationSV\" />
-    <Folder Include="ViewModels\MainVM\" />
     <Folder Include="ViewModels\SettingsVM\" />
     <Folder Include="ViewModels\ProfileVM\" />
     <Folder Include="ViewModels\NotificationVM\" />

@@ -1,12 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:mainvm="clr-namespace:SASS.ViewModels.MainVM"
+             xmlns:model="clr-namespace:SASS.Models"
              x:Class="SASS.Views.Main.MainPage">
+    <ContentPage.BindingContext>
+        <mainvm:MainViewModel />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Main Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame Padding="0" BackgroundColor="Transparent" >
+                
+            <CollectionView ItemsSource="{Binding Faculties}">
+                    <CollectionView.Header>
+                        <Frame Padding="0" BackgroundColor="Transparent" >
+                            <Label Text="Faculties" TextColor="#191919" FontSize="23" />
+                        </Frame>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Span="4" Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="Transparent" Padding="0" x:DataType="model:Faculty">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type mainvm:MainViewModel}}, Path=FacultiyClick}" CommandParameter="{Binding .}" />
+                                </Frame.GestureRecognizers>
+                                
+                                <Label Text="{Binding F_Name}" />
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                
+                
+            </CollectionView>
+            </Frame>
+            
+            
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>

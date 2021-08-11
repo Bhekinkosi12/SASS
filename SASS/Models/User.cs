@@ -15,6 +15,9 @@ namespace SASS.Models
         public List<Note> Notes { get; set; }
         public List<Order> Orders { get; set; }
         public List<Subscribe> Subscribes { get; set; }
+        public List<Faculty> Faculties { get; set; }
+        public List<Genre> Genres { get; set; }
+        
 
     }
 }
