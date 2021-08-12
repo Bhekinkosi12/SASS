@@ -23,6 +23,7 @@ namespace SASS
             Routing.RegisterRoute(nameof(NotificationPage), typeof(NotificationPage));
             Routing.RegisterRoute(nameof(ProfilePage), typeof(ProfilePage));
             Routing.RegisterRoute(nameof(SettingsPage), typeof(SettingsPage));
+            Routing.RegisterRoute(nameof(BookPage), typeof(BookPage));
 
            
         }

@@ -20,6 +20,12 @@ namespace SASS.ViewModels.AuthenticationVM
         public Command SignIn { get; }
 
 
+        public SigninViewModel()
+        {
+            SignIn = new Command(OnSignin);
+        }
+
+
         public string FullName
         {
             get => fullname;
@@ -98,11 +104,11 @@ namespace SASS.ViewModels.AuthenticationVM
            bool process = await data.AddUser(user);
             CurrentUser = user;
 
-          
-                
 
 
 
+
+            await Shell.Current.GoToAsync("BookPage");
             
             
            

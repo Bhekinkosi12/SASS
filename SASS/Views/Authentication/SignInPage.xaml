@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:authentication="clr-namespace:SASS.Views.Authentication" xmlns:authenticationvm="clr-namespace:SASS.ViewModels.AuthenticationVM"
              x:Class="SASS.Views.Authentication.SignInPage">
+    <ContentPage.BindingContext>
+        <authenticationvm:SigninViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -13,11 +16,11 @@
             <Frame Padding="0" BackgroundColor="{StaticResource SASS_Default_1}" Grid.Row="1" >
                 <ScrollView >
                     <StackLayout >
-                        <Entry Style="{StaticResource entryStyle}" />
-                        <Entry Style="{StaticResource entryStyle}" />
-                        <Entry Style="{StaticResource entryStyle}" />
-                        <Entry Style="{StaticResource entryStyle}" />
-                        
+                        <Entry Style="{StaticResource entryStyle}" Text="{Binding FullName}" Placeholder="Full Name" />
+                        <Entry Style="{StaticResource entryStyle}" Text="{Binding Email}" Placeholder="Email" />
+                        <Entry Style="{StaticResource entryStyle}" Text="{Binding Number}" Placeholder="Number" />
+                        <Entry Style="{StaticResource entryStyle}" Text="{Binding Password}" Placeholder="Password" IsPassword="True" />
+                        <Entry Style="{StaticResource entryStyle}" Text="{Binding ConfirmPassword}" Placeholder="Confirm Password" IsPassword="True" />
 
 
                     </StackLayout>
@@ -29,7 +32,7 @@
             </Frame>
 
             <Frame Padding="0" BackgroundColor="Transparent" Grid.Row="2" >
-                <Button Text="Create Account" HorizontalOptions="End" ></Button> 
+                <Button Text="Create Account" HorizontalOptions="End" Command="{Binding}" ></Button> 
             </Frame>
             
             
