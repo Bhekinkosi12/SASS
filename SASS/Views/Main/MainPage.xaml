@@ -27,8 +27,18 @@
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type mainvm:MainViewModel}}, Path=FacultiyClick}" CommandParameter="{Binding .}" />
                                 </Frame.GestureRecognizers>
-                                
-                                <Label Text="{Binding F_Name}" />
+
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="70" />
+                                        <RowDefinition Height="20" />
+                                    </Grid.RowDefinitions>
+
+                                    <Image Source="{Binding F_Image}" Aspect="AspectFit" />
+                                    <Label Text="{Binding F_Name}" TextColor="#191919" FontSize="17" />
+
+                                </Grid>
+                               
                             </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

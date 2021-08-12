@@ -6,6 +6,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Documents\Early_Childhood.pdf" />
+    <None Remove="Documents\informationTech.pdf" />
+    <None Remove="Documents\introToLaw.pdf" />
+    <None Remove="Documents\publicHealth.pdf" />
+    <None Remove="Documents\Start_Where_You_Are.pdf" />
+    <None Remove="Documents\ThinkAndGrow.pdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Documents\Early_Childhood.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\informationTech.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\introToLaw.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\publicHealth.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Start_Where_You_Are.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\ThinkAndGrow.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Google.Apis.Calendar.v3" Version="1.53.0.2382" />
     <PackageReference Include="Google.Apis.Core" Version="1.53.0" />
     <PackageReference Include="Google.Apis.Drive.v3" Version="1.53.0.2397" />
@@ -13,6 +43,8 @@
     <PackageReference Include="MR.Gestures" Version="2.1.3" />
     <PackageReference Include="SQLite" Version="3.13.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.0-beta" />
+    <PackageReference Include="Syncfusion.Xamarin.Pdf" Version="19.2.0.55" />
+    <PackageReference Include="Syncfusion.Xamarin.SfPdfViewer" Version="19.2.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="19.2.0.49" />
     <PackageReference Include="Xamanimation" Version="1.3.0" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.3.0-pre1" />
@@ -23,7 +55,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\MainSV\" />
     <Folder Include="Services\SettingsSV\" />
     <Folder Include="Services\ProfileSV\" />
     <Folder Include="Services\NotificationSV\" />
@@ -33,6 +64,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Views\Main\BookPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Main\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
